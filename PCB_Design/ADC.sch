@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.00001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -1830,536 +1830,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-Clocks">
-<description>&lt;h3&gt;SparkFun Clocks, Oscillators and Resonators&lt;/h3&gt;
-This library contains the real-time clocks, oscillators, resonators, and crystals we use. 
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="HC49U">
-<description>&lt;h3&gt;HC49/U 11.6x4.6mm PTH Crystal (13.46mm height)&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://www.digikey.com/Web%20Export/Supplier%20Content/Citizen_300/PDF/Citizen_HC49US.pdf?redirected=1"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-2.921" y1="-2.286" x2="2.921" y2="-2.286" width="0.4064" layer="21"/>
-<wire x1="-2.921" y1="2.286" x2="2.921" y2="2.286" width="0.4064" layer="21"/>
-<wire x1="-2.921" y1="-1.778" x2="2.921" y2="-1.778" width="0.1524" layer="21"/>
-<wire x1="2.921" y1="1.778" x2="-2.921" y2="1.778" width="0.1524" layer="21"/>
-<wire x1="2.921" y1="1.778" x2="2.921" y2="-1.778" width="0.1524" layer="21" curve="-180"/>
-<wire x1="2.921" y1="2.286" x2="2.921" y2="-2.286" width="0.4064" layer="21" curve="-180"/>
-<wire x1="-2.921" y1="2.286" x2="-2.921" y2="-2.286" width="0.4064" layer="21" curve="180"/>
-<wire x1="-2.921" y1="1.778" x2="-2.921" y2="-1.778" width="0.1524" layer="21" curve="180"/>
-<wire x1="-0.254" y1="0.889" x2="0.254" y2="0.889" width="0.1524" layer="21"/>
-<wire x1="0.254" y1="0.889" x2="0.254" y2="-0.889" width="0.1524" layer="21"/>
-<wire x1="0.254" y1="-0.889" x2="-0.254" y2="-0.889" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="-0.889" x2="-0.254" y2="0.889" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="0.889" x2="0.635" y2="0" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="0" x2="0.635" y2="-0.889" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0.889" x2="-0.635" y2="0" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0" x2="-0.635" y2="-0.889" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="0" x2="1.27" y2="0" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0" x2="-1.27" y2="0" width="0.1524" layer="21"/>
-<pad name="1" x="-2.413" y="0" drill="0.8128"/>
-<pad name="2" x="2.413" y="0" drill="0.8128"/>
-<text x="0" y="2.667" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<rectangle x1="-3.81" y1="-2.794" x2="3.81" y2="2.794" layer="43"/>
-<rectangle x1="-4.318" y1="-2.54" x2="-3.81" y2="2.54" layer="43"/>
-<rectangle x1="-4.826" y1="-2.286" x2="-4.318" y2="2.286" layer="43"/>
-<rectangle x1="-5.334" y1="-1.778" x2="-4.826" y2="1.778" layer="43"/>
-<rectangle x1="-5.588" y1="-1.27" x2="-5.334" y2="1.016" layer="43"/>
-<rectangle x1="3.81" y1="-2.54" x2="4.318" y2="2.54" layer="43"/>
-<rectangle x1="4.318" y1="-2.286" x2="4.826" y2="2.286" layer="43"/>
-<rectangle x1="4.826" y1="-1.778" x2="5.334" y2="1.778" layer="43"/>
-<rectangle x1="5.334" y1="-1.016" x2="5.588" y2="1.016" layer="43"/>
-</package>
-<package name="CRYSTAL-PTH-3X8-CYL">
-<description>&lt;h3&gt;3x8mm Cylindrical Can (Radial) PTH Crystal&lt;/h3&gt;
-
-This is the "KIT" version, which has limited top masking for improved ease of assembly.
-
-&lt;p&gt;Example product: &lt;a href="https://www.sparkfun.com/products/540"&gt;32kHz crystal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.ecsxtal.com/store/pdf/ECS-3x8.pdf"&gt;Example datasheet&lt;/a&gt; (ECS-3X8)&lt;/p&gt;</description>
-<wire x1="-1.397" y1="1.651" x2="1.397" y2="1.651" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="9.906" x2="1.524" y2="9.652" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.524" y1="9.652" x2="-1.27" y2="9.906" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.27" y1="9.906" x2="1.27" y2="9.906" width="0.1524" layer="21"/>
-<wire x1="1.397" y1="1.651" x2="1.397" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="1.524" y1="2.032" x2="1.397" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="1.524" y1="2.032" x2="1.524" y2="9.652" width="0.1524" layer="21"/>
-<wire x1="-1.397" y1="1.651" x2="-1.397" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.524" y1="2.032" x2="-1.397" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.524" y1="2.032" x2="-1.524" y2="9.652" width="0.1524" layer="21"/>
-<wire x1="1.397" y1="2.032" x2="-1.397" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="0.5588" y1="0.7112" x2="0.508" y2="0.762" width="0.4064" layer="21"/>
-<wire x1="0.508" y1="0.762" x2="0.508" y2="1.143" width="0.4064" layer="21"/>
-<wire x1="-0.508" y1="0.762" x2="-0.508" y2="1.016" width="0.4064" layer="21"/>
-<wire x1="-0.5588" y1="0.7112" x2="-0.508" y2="0.762" width="0.4064" layer="21"/>
-<wire x1="0.635" y1="0.635" x2="1.27" y2="0" width="0.1524" layer="51"/>
-<wire x1="-0.635" y1="0.635" x2="-1.27" y2="0" width="0.1524" layer="51"/>
-<wire x1="-0.762" y1="5.588" x2="-0.762" y2="5.207" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="5.207" x2="-0.762" y2="5.207" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="5.207" x2="0.762" y2="5.588" width="0.1524" layer="21"/>
-<wire x1="-0.762" y1="5.588" x2="0.762" y2="5.588" width="0.1524" layer="21"/>
-<wire x1="-0.762" y1="5.969" x2="0" y2="5.969" width="0.1524" layer="21"/>
-<wire x1="-0.762" y1="4.826" x2="0" y2="4.826" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.826" x2="0" y2="4.318" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.826" x2="0.762" y2="4.826" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.969" x2="0" y2="6.477" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.969" x2="0.762" y2="5.969" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="0.8128" diameter="1.6764"/>
-<pad name="2" x="1.27" y="0" drill="0.8128" diameter="1.6764"/>
-<rectangle x1="0.3048" y1="1.016" x2="0.7112" y2="1.6002" layer="21"/>
-<rectangle x1="-0.7112" y1="1.016" x2="-0.3048" y2="1.6002" layer="21"/>
-<rectangle x1="-1.778" y1="1.016" x2="1.778" y2="10.414" layer="43"/>
-<text x="-1.778" y="5.334" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="1.778" y="5.334" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
-</package>
-<package name="CRYSTAL-PTH-2X6-CYL">
-<description>&lt;h3&gt;2x6mm Cylindrical Can (Radial) PTH Crystal&lt;/h3&gt;
-
-&lt;p&gt;Example product: &lt;a href="https://www.sparkfun.com/products/540"&gt;32kHz crystal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.ecsxtal.com/store/pdf/ECS-3x8.pdf"&gt;Example datasheet&lt;/a&gt; (ECS-2X6)&lt;/p&gt;</description>
-<wire x1="-0.889" y1="1.651" x2="0.889" y2="1.651" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="7.747" x2="1.016" y2="7.493" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.016" y1="7.493" x2="-0.762" y2="7.747" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-0.762" y1="7.747" x2="0.762" y2="7.747" width="0.1524" layer="21"/>
-<wire x1="0.889" y1="1.651" x2="0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="2.032" x2="1.016" y2="7.493" width="0.1524" layer="21"/>
-<wire x1="-0.889" y1="1.651" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="2.032" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="2.032" x2="-1.016" y2="7.493" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="0.762" x2="0.508" y2="1.143" width="0.4064" layer="21"/>
-<wire x1="-0.508" y1="0.762" x2="-0.508" y2="1.27" width="0.4064" layer="21"/>
-<wire x1="0.635" y1="0.635" x2="1.27" y2="0" width="0.4064" layer="51"/>
-<wire x1="-0.635" y1="0.635" x2="-1.27" y2="0" width="0.4064" layer="51"/>
-<wire x1="-0.508" y1="4.953" x2="-0.508" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="4.572" x2="-0.508" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="4.572" x2="0.508" y2="4.953" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="4.953" x2="0.508" y2="4.953" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="5.334" x2="0" y2="5.334" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="4.191" x2="0" y2="4.191" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.191" x2="0" y2="3.683" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.191" x2="0.508" y2="4.191" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.334" x2="0" y2="5.842" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.334" x2="0.508" y2="5.334" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="2.032" x2="0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="0.889" y1="2.032" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="0.8128" diameter="1.6764"/>
-<pad name="2" x="1.27" y="0" drill="0.8128" diameter="1.6764"/>
-<rectangle x1="0.3048" y1="1.016" x2="0.7112" y2="1.6002" layer="21"/>
-<rectangle x1="-0.7112" y1="1.016" x2="-0.3048" y2="1.6002" layer="21"/>
-<rectangle x1="-1.778" y1="0.762" x2="1.778" y2="8.382" layer="43"/>
-<text x="-1.27" y="4.572" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="1.27" y="4.572" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
-</package>
-<package name="HC49UP">
-<description>&lt;h3&gt;HC-49/UP 11.4x4.8mm SMD Crystal&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://www.standardcrystalcorp.com/pdf%5Cc-3.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-5.1091" y1="1.143" x2="-3.429" y2="2.0321" width="0.0508" layer="21" curve="-55.770993" cap="flat"/>
-<wire x1="-5.715" y1="1.143" x2="-5.715" y2="2.159" width="0.1524" layer="21"/>
-<wire x1="3.429" y1="2.032" x2="5.1091" y2="1.143" width="0.0508" layer="21" curve="-55.772485" cap="flat"/>
-<wire x1="5.715" y1="1.143" x2="5.715" y2="2.159" width="0.1524" layer="21"/>
-<wire x1="3.429" y1="-1.27" x2="-3.429" y2="-1.27" width="0.0508" layer="21"/>
-<wire x1="3.429" y1="-2.032" x2="-3.429" y2="-2.032" width="0.0508" layer="21"/>
-<wire x1="-3.429" y1="1.27" x2="3.429" y2="1.27" width="0.0508" layer="21"/>
-<wire x1="5.461" y1="-2.413" x2="-5.461" y2="-2.413" width="0.1524" layer="21"/>
-<wire x1="5.715" y1="-0.381" x2="6.477" y2="-0.381" width="0.1524" layer="51"/>
-<wire x1="5.715" y1="0.381" x2="6.477" y2="0.381" width="0.1524" layer="51"/>
-<wire x1="6.477" y1="-0.381" x2="6.477" y2="0.381" width="0.1524" layer="51"/>
-<wire x1="5.461" y1="-2.413" x2="5.715" y2="-2.159" width="0.1524" layer="21" curve="90"/>
-<wire x1="5.715" y1="-1.143" x2="5.715" y2="1.143" width="0.1524" layer="51"/>
-<wire x1="5.715" y1="-2.159" x2="5.715" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="3.429" y1="-1.27" x2="3.9826" y2="-1.143" width="0.0508" layer="21" curve="25.842828" cap="flat"/>
-<wire x1="3.429" y1="1.27" x2="3.9826" y2="1.143" width="0.0508" layer="21" curve="-25.842828" cap="flat"/>
-<wire x1="3.429" y1="-2.032" x2="5.109" y2="-1.1429" width="0.0508" layer="21" curve="55.771157" cap="flat"/>
-<wire x1="3.9826" y1="-1.143" x2="3.9826" y2="1.143" width="0.0508" layer="51" curve="128.314524" cap="flat"/>
-<wire x1="5.1091" y1="-1.143" x2="5.1091" y2="1.143" width="0.0508" layer="51" curve="68.456213" cap="flat"/>
-<wire x1="-5.1091" y1="-1.143" x2="-3.429" y2="-2.032" width="0.0508" layer="21" curve="55.772485" cap="flat"/>
-<wire x1="-3.9826" y1="-1.143" x2="-3.9826" y2="1.143" width="0.0508" layer="51" curve="-128.314524" cap="flat"/>
-<wire x1="-3.9826" y1="-1.143" x2="-3.429" y2="-1.27" width="0.0508" layer="21" curve="25.842828" cap="flat"/>
-<wire x1="-3.9826" y1="1.143" x2="-3.429" y2="1.27" width="0.0508" layer="21" curve="-25.842828" cap="flat"/>
-<wire x1="-6.477" y1="-0.381" x2="-6.477" y2="0.381" width="0.1524" layer="51"/>
-<wire x1="-5.1091" y1="-1.143" x2="-5.1091" y2="1.143" width="0.0508" layer="51" curve="-68.456213" cap="flat"/>
-<wire x1="-5.715" y1="-1.143" x2="-5.715" y2="-0.381" width="0.1524" layer="51"/>
-<wire x1="-5.715" y1="-0.381" x2="-5.715" y2="0.381" width="0.1524" layer="51"/>
-<wire x1="-5.715" y1="0.381" x2="-5.715" y2="1.143" width="0.1524" layer="51"/>
-<wire x1="-5.715" y1="-2.159" x2="-5.715" y2="-1.143" width="0.1524" layer="21"/>
-<wire x1="-5.715" y1="-2.159" x2="-5.461" y2="-2.413" width="0.1524" layer="21" curve="90"/>
-<wire x1="-5.715" y1="-0.381" x2="-6.477" y2="-0.381" width="0.1524" layer="51"/>
-<wire x1="-5.715" y1="0.381" x2="-6.477" y2="0.381" width="0.1524" layer="51"/>
-<wire x1="-3.429" y1="2.032" x2="3.429" y2="2.032" width="0.0508" layer="21"/>
-<wire x1="5.461" y1="2.413" x2="-5.461" y2="2.413" width="0.1524" layer="21"/>
-<wire x1="5.461" y1="2.413" x2="5.715" y2="2.159" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-5.715" y1="2.159" x2="-5.461" y2="2.413" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-0.254" y1="0.635" x2="-0.254" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="-0.635" x2="0.254" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0.254" y1="-0.635" x2="0.254" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0.254" y1="0.635" x2="-0.254" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0.635" x2="-0.635" y2="0" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0" x2="-0.635" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="0" x2="-1.016" y2="0" width="0.0508" layer="21"/>
-<wire x1="0.635" y1="0.635" x2="0.635" y2="0" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="0" x2="0.635" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="0" x2="1.016" y2="0" width="0.0508" layer="21"/>
-<smd name="1" x="-4.826" y="0" dx="5.334" dy="1.9304" layer="1"/>
-<smd name="2" x="4.826" y="0" dx="5.334" dy="1.9304" layer="1"/>
-<rectangle x1="-6.604" y1="-3.048" x2="6.604" y2="3.048" layer="43"/>
-<text x="-0.254" y="2.667" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-</package>
-<package name="HC49US">
-<description>&lt;h3&gt;HC49/US 11.6x4.6mm PTH Crystal&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://www.digikey.com/Web%20Export/Supplier%20Content/Citizen_300/PDF/Citizen_HC49US.pdf?redirected=1"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-3.429" y1="-2.286" x2="3.429" y2="-2.286" width="0.2032" layer="21"/>
-<wire x1="3.429" y1="2.286" x2="-3.429" y2="2.286" width="0.2032" layer="21"/>
-<wire x1="3.429" y1="2.286" x2="3.429" y2="-2.286" width="0.2032" layer="21" curve="-180"/>
-<wire x1="-3.429" y1="2.286" x2="-3.429" y2="-2.286" width="0.2032" layer="21" curve="180"/>
-<pad name="1" x="-2.54" y="0" drill="0.7" diameter="1.651" rot="R90"/>
-<pad name="2" x="2.54" y="0" drill="0.7" diameter="1.651" rot="R90"/>
-<text x="0" y="2.54" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-2.54" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-</package>
-<package name="CRYSTAL-SMD-2X6-CYL">
-<description>&lt;h3&gt;6.0x2.0mm Cylindrical Can (Radial) SMD Crystal&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://cfm.citizen.co.jp/english/product/pdf/CMR200T.pdf"&gt;Example&lt;/a&gt;&lt;/p&gt;</description>
-<smd name="X1" x="-1.27" y="0" dx="1" dy="2.5" layer="1"/>
-<smd name="X2" x="1.27" y="0" dx="1" dy="2.5" layer="1"/>
-<smd name="SHEILD" x="0" y="5.08" dx="2.5" dy="6" layer="1"/>
-<text x="0" y="8.255" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
-<text x="0" y="-1.524" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
-<wire x1="-1.27" y1="-1" x2="-1.27" y2="1" width="0.3" layer="51"/>
-<wire x1="-1.27" y1="1" x2="-0.6" y2="1" width="0.3" layer="51"/>
-<wire x1="-0.6" y1="1" x2="-0.6" y2="2" width="0.3" layer="51"/>
-<wire x1="-0.6" y1="2" x2="-0.5" y2="2" width="0.127" layer="51"/>
-<wire x1="1.27" y1="-1" x2="1.27" y2="1" width="0.3" layer="51"/>
-<wire x1="1.27" y1="1" x2="0.6" y2="1" width="0.3" layer="51"/>
-<wire x1="0.6" y1="1" x2="0.6" y2="2" width="0.3" layer="51"/>
-<wire x1="0.6" y1="2" x2="0.5" y2="2" width="0.127" layer="51"/>
-<polygon width="0.1" layer="51">
-<vertex x="-1" y="8"/>
-<vertex x="-1" y="2"/>
-<vertex x="1" y="2"/>
-<vertex x="1" y="8"/>
-</polygon>
-</package>
-<package name="CRYSTAL-SMD-5X3.2-4PAD">
-<description>&lt;h3&gt;5x3.2mm SMD Crystal&lt;/h3&gt;
-&lt;p&gt;Example: &lt;a href="https://www.sparkfun.com/products/94"&gt;16MHz SMD Crystal&lt;/a&gt; (&lt;a href="https://www.sparkfun.com/datasheets/Components/SPK-5032-16MHZ.pdf"&gt;Datasheet&lt;/a&gt;)&lt;/p&gt;</description>
-<wire x1="-0.6" y1="1.7" x2="0.6" y2="1.7" width="0.2032" layer="21"/>
-<wire x1="2.6" y1="0.3" x2="2.6" y2="-0.3" width="0.2032" layer="21"/>
-<wire x1="0.6" y1="-1.7" x2="-0.6" y2="-1.7" width="0.2032" layer="21"/>
-<wire x1="-2.6" y1="0.3" x2="-2.6" y2="-0.3" width="0.2032" layer="21"/>
-<smd name="1" x="-1.85" y="-1.15" dx="1.9" dy="1.1" layer="1"/>
-<smd name="3" x="1.85" y="1.15" dx="1.9" dy="1.1" layer="1"/>
-<smd name="4" x="-1.85" y="1.15" dx="1.9" dy="1.1" layer="1"/>
-<smd name="2" x="1.85" y="-1.15" dx="1.9" dy="1.1" layer="1"/>
-<text x="0" y="1.905" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.905" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<wire x1="-2.5" y1="1.6" x2="-2.5" y2="-1.6" width="0.127" layer="51"/>
-<wire x1="-2.5" y1="-1.6" x2="2.5" y2="-1.6" width="0.127" layer="51"/>
-<wire x1="2.5" y1="-1.6" x2="2.5" y2="1.6" width="0.127" layer="51"/>
-<wire x1="2.5" y1="1.6" x2="-2.5" y2="1.6" width="0.127" layer="51"/>
-<polygon width="0.127" layer="51">
-<vertex x="-2.5" y="1.6"/>
-<vertex x="-2.5" y="0.8"/>
-<vertex x="-1.3" y="0.8"/>
-<vertex x="-1.3" y="1.6"/>
-</polygon>
-<polygon width="0.127" layer="51">
-<vertex x="2.5" y="-1.6"/>
-<vertex x="2.5" y="-0.8"/>
-<vertex x="1.3" y="-0.8"/>
-<vertex x="1.3" y="-1.6"/>
-</polygon>
-<polygon width="0.127" layer="51">
-<vertex x="1.3" y="1.6"/>
-<vertex x="1.3" y="0.8"/>
-<vertex x="2.5" y="0.8"/>
-<vertex x="2.5" y="1.6"/>
-</polygon>
-<polygon width="0.127" layer="51">
-<vertex x="-1.3" y="-1.6"/>
-<vertex x="-1.3" y="-0.8"/>
-<vertex x="-2.5" y="-0.8"/>
-<vertex x="-2.5" y="-1.6"/>
-</polygon>
-</package>
-<package name="CRYSTAL-SMD-MC-146">
-<description>&lt;h3&gt;7x1.5mm MC-146 Flat Lead SMD Crystal&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href="https://support.epson.biz/td/api/doc_check.php?dl=brief_MC-156_en.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="0.35" y1="0" x2="7.05" y2="0" width="0.127" layer="51"/>
-<wire x1="7.05" y1="0" x2="7.05" y2="1.5" width="0.127" layer="51"/>
-<wire x1="7.05" y1="1.5" x2="0.35" y2="1.5" width="0.127" layer="51"/>
-<wire x1="0.35" y1="1.5" x2="0.35" y2="0" width="0.127" layer="51"/>
-<smd name="P$1" x="0.6" y="0.3" dx="1.2" dy="0.6" layer="1"/>
-<smd name="P$2" x="0.6" y="1.2" dx="1.2" dy="0.6" layer="1"/>
-<smd name="NC2" x="6.9" y="0.3" dx="1.2" dy="0.6" layer="1"/>
-<smd name="NC1" x="6.9" y="1.2" dx="1.2" dy="0.6" layer="1"/>
-<text x="3.81" y="1.851" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
-<text x="3.81" y="-0.327" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
-<wire x1="7.05" y1="-0.2" x2="0.35" y2="-0.2" width="0.2032" layer="21"/>
-<wire x1="0.35" y1="1.7" x2="7.05" y2="1.7" width="0.2032" layer="21"/>
-</package>
-<package name="CRYSTAL-PTH-2X6-CYL-KIT">
-<description>&lt;h3&gt;2x6mm Cylindrical Can (Radial) PTH Crystal&lt;/h3&gt;
-
-This is the "KIT" version, which has limited top masking for improved ease of assembly.
-
-&lt;p&gt;Example product: &lt;a href="https://www.sparkfun.com/products/540"&gt;32kHz crystal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.ecsxtal.com/store/pdf/ECS-3x8.pdf"&gt;Example datasheet&lt;/a&gt; (ECS-2X6)&lt;/p&gt;</description>
-<wire x1="-0.889" y1="1.651" x2="0.889" y2="1.651" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="7.747" x2="1.016" y2="7.493" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.016" y1="7.493" x2="-0.762" y2="7.747" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-0.762" y1="7.747" x2="0.762" y2="7.747" width="0.1524" layer="21"/>
-<wire x1="0.889" y1="1.651" x2="0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="2.032" x2="1.016" y2="7.493" width="0.1524" layer="21"/>
-<wire x1="-0.889" y1="1.651" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="2.032" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="-1.016" y1="2.032" x2="-1.016" y2="7.493" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="0.762" x2="0.508" y2="1.143" width="0.4064" layer="21"/>
-<wire x1="-0.508" y1="0.762" x2="-0.508" y2="1.27" width="0.4064" layer="21"/>
-<wire x1="0.635" y1="0.635" x2="1.27" y2="0" width="0.4064" layer="51"/>
-<wire x1="-0.635" y1="0.635" x2="-1.27" y2="0" width="0.4064" layer="51"/>
-<wire x1="-0.508" y1="4.953" x2="-0.508" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="4.572" x2="-0.508" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="4.572" x2="0.508" y2="4.953" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="4.953" x2="0.508" y2="4.953" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="5.334" x2="0" y2="5.334" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="4.191" x2="0" y2="4.191" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.191" x2="0" y2="3.683" width="0.1524" layer="21"/>
-<wire x1="0" y1="4.191" x2="0.508" y2="4.191" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.334" x2="0" y2="5.842" width="0.1524" layer="21"/>
-<wire x1="0" y1="5.334" x2="0.508" y2="5.334" width="0.1524" layer="21"/>
-<wire x1="1.016" y1="2.032" x2="0.889" y2="2.032" width="0.1524" layer="21"/>
-<wire x1="0.889" y1="2.032" x2="-0.889" y2="2.032" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="0.8128" diameter="1.6764" stop="no"/>
-<pad name="2" x="1.27" y="0" drill="0.8128" diameter="1.6764" stop="no"/>
-<rectangle x1="0.3048" y1="1.016" x2="0.7112" y2="1.6002" layer="21"/>
-<rectangle x1="-0.7112" y1="1.016" x2="-0.3048" y2="1.6002" layer="21"/>
-<rectangle x1="-1.778" y1="0.762" x2="1.778" y2="8.382" layer="43"/>
-<circle x="-1.27" y="0" radius="0.508" width="0" layer="29"/>
-<circle x="1.27" y="0" radius="0.508" width="0" layer="29"/>
-<circle x="-1.27" y="0" radius="0.924571875" width="0" layer="30"/>
-<circle x="1.27" y="0" radius="0.915809375" width="0" layer="30"/>
-<text x="-1.27" y="4.572" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="1.27" y="4.572" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
-</package>
-<package name="CRYSTAL-SMD-5X3.2-2PAD">
-<description>&lt;h3&gt;5x3.2mm 2-pad SMD Crystal&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://www.txccrystal.com/images/pdf/7a.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<smd name="P$1" x="1.85" y="0" dx="1.7" dy="2.4" layer="1"/>
-<smd name="P$2" x="-1.85" y="0" dx="1.7" dy="2.4" layer="1"/>
-<wire x1="-2.6" y1="1.7" x2="2.6" y2="1.7" width="0.2032" layer="21"/>
-<wire x1="2.6" y1="-1.7" x2="-2.6" y2="-1.7" width="0.2032" layer="21"/>
-<text x="0" y="1.878" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.878" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<wire x1="-2.5" y1="-1.6" x2="2.5" y2="-1.6" width="0.127" layer="51"/>
-<wire x1="2.5" y1="-1.6" x2="2.5" y2="1.6" width="0.127" layer="51"/>
-<wire x1="2.5" y1="1.6" x2="-2.5" y2="1.6" width="0.127" layer="51"/>
-<wire x1="-2.5" y1="1.6" x2="-2.5" y2="-1.6" width="0.127" layer="51"/>
-<wire x1="-2.6" y1="1.7" x2="-2.6" y2="1.4" width="0.2032" layer="21"/>
-<wire x1="2.6" y1="-1.7" x2="2.6" y2="-1.4" width="0.2032" layer="21"/>
-<wire x1="-2.6" y1="-1.7" x2="-2.6" y2="-1.4" width="0.2032" layer="21"/>
-<wire x1="2.6" y1="1.7" x2="2.6" y2="1.4" width="0.2032" layer="21"/>
-<polygon width="0.127" layer="51">
-<vertex x="-2.5" y="1"/>
-<vertex x="-1.2" y="1"/>
-<vertex x="-1.2" y="-1"/>
-<vertex x="-2.5" y="-1"/>
-</polygon>
-<polygon width="0.127" layer="51">
-<vertex x="2.5" y="-1"/>
-<vertex x="1.2" y="-1"/>
-<vertex x="1.2" y="1"/>
-<vertex x="2.5" y="1"/>
-</polygon>
-</package>
-<package name="CRYSTAL-SMD-3.2X1.5MM">
-<description>&lt;h3&gt;3.2 x 1.5mm SMD Crystal Package&lt;/h3&gt;
-&lt;p&gt;Example: &lt;a href="http://www.sii.co.jp/en/quartz/files/2013/03/file_PRODUCT_MASTER_50812_GRAPHIC03.pdf"&gt;SX-32S&lt;/a&gt;&lt;/p&gt;</description>
-<smd name="P$1" x="-1.25" y="0" dx="1" dy="1.8" layer="1"/>
-<smd name="P$2" x="1.25" y="0" dx="1" dy="1.8" layer="1"/>
-<wire x1="-1.6" y1="0.75" x2="1.6" y2="0.75" width="0.127" layer="51"/>
-<wire x1="1.6" y1="0.75" x2="1.6" y2="-0.75" width="0.127" layer="51"/>
-<wire x1="1.6" y1="-0.75" x2="-1.6" y2="-0.75" width="0.127" layer="51"/>
-<wire x1="-1.6" y1="-0.75" x2="-1.6" y2="0.75" width="0.127" layer="51"/>
-<wire x1="-0.5" y1="0.85" x2="0.5" y2="0.85" width="0.2032" layer="21"/>
-<wire x1="0.5" y1="-0.85" x2="-0.5" y2="-0.85" width="0.2032" layer="21"/>
-<text x="0" y="1.043" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
-<text x="0" y="-1.043" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
-</package>
-<package name="CRYSTAL-SMD-3.2X2.5MM">
-<description>&lt;h3&gt;3.2 x 2.5mm SMD Crystal Package&lt;/h3&gt;
-&lt;p&gt;Example: &lt;a href="http://www.digikey.com/product-search/en?keywords=SER3627TR-ND"&gt;SX-32S&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-1.6" y1="-1.25" x2="-1.6" y2="1.25" width="0.127" layer="51"/>
-<wire x1="-1.6" y1="1.25" x2="1.6" y2="1.25" width="0.127" layer="51"/>
-<wire x1="1.6" y1="1.25" x2="1.6" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="1.6" y1="-1.25" x2="-1.6" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-0.4" y1="1.377" x2="0.4" y2="1.377" width="0.2032" layer="21"/>
-<wire x1="-1.727" y1="-0.15" x2="-1.727" y2="0.15" width="0.2032" layer="21"/>
-<wire x1="1.727" y1="0.15" x2="1.727" y2="-0.15" width="0.2032" layer="21"/>
-<wire x1="0.4" y1="-1.377" x2="-0.4" y2="-1.377" width="0.2032" layer="21"/>
-<rectangle x1="-1.6" y1="0.35" x2="-0.6" y2="1.15" layer="51"/>
-<rectangle x1="0.6" y1="-1.15" x2="1.6" y2="-0.35" layer="51" rot="R180"/>
-<rectangle x1="-1.6" y1="-1.15" x2="-0.6" y2="-0.35" layer="51"/>
-<rectangle x1="0.6" y1="0.35" x2="1.6" y2="1.15" layer="51" rot="R180"/>
-<smd name="1" x="-1.175" y="-0.875" dx="1.2" dy="1.1" layer="1" rot="R180"/>
-<smd name="2" x="1.175" y="-0.875" dx="1.2" dy="1.1" layer="1"/>
-<smd name="3" x="1.175" y="0.875" dx="1.2" dy="1.1" layer="1"/>
-<smd name="4" x="-1.175" y="0.875" dx="1.2" dy="1.1" layer="1" rot="R180"/>
-<text x="0" y="1.524" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
-<text x="0" y="-1.524" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
-</package>
-</packages>
-<symbols>
-<symbol name="CRYSTAL">
-<description>&lt;h3&gt;Crystal (no ground pin)&lt;/h3&gt;</description>
-<wire x1="1.016" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.016" y2="0" width="0.1524" layer="94"/>
-<wire x1="-0.381" y1="1.524" x2="-0.381" y2="-1.524" width="0.254" layer="94"/>
-<wire x1="-0.381" y1="-1.524" x2="0.381" y2="-1.524" width="0.254" layer="94"/>
-<wire x1="0.381" y1="-1.524" x2="0.381" y2="1.524" width="0.254" layer="94"/>
-<wire x1="0.381" y1="1.524" x2="-0.381" y2="1.524" width="0.254" layer="94"/>
-<wire x1="1.016" y1="1.778" x2="1.016" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="1.778" x2="-1.016" y2="-1.778" width="0.254" layer="94"/>
-<text x="0" y="2.032" size="1.778" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-2.032" size="1.778" layer="96" font="vector" align="top-center">&gt;VALUE</text>
-<text x="-2.159" y="-1.143" size="0.8636" layer="93">1</text>
-<text x="1.524" y="-1.143" size="0.8636" layer="93">2</text>
-<pin name="2" x="2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="1" x="-2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="CRYSTAL" prefix="Y" uservalue="yes">
-<description>&lt;h3&gt;Crystals (Generic)&lt;/h3&gt;
-&lt;p&gt;These are &lt;b&gt;passive&lt;/b&gt; quartz crystals, which can be used as a clock source for a microcontroller.&lt;/p&gt;
-&lt;p&gt;Crystal's are two-terminal devices. They require external "load" capacitors to generate an oscillating signal.&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="CRYSTAL" x="0" y="0"/>
-</gates>
-<devices>
-<device name="PTH-HC49UV" package="HC49U">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="PTH-3X8" package="CRYSTAL-PTH-3X8-CYL">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="PTH-2X6" package="CRYSTAL-PTH-2X6-CYL">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-HC49UP" package="HC49UP">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="PTH-HC49US" package="HC49US">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-2X6" package="CRYSTAL-SMD-2X6-CYL">
-<connects>
-<connect gate="G$1" pin="1" pad="X1"/>
-<connect gate="G$1" pin="2" pad="X2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-5X3.2-4PAD" package="CRYSTAL-SMD-5X3.2-4PAD">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-MC146" package="CRYSTAL-SMD-MC-146">
-<connects>
-<connect gate="G$1" pin="1" pad="P$2"/>
-<connect gate="G$1" pin="2" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="PTH-2X6-KIT" package="CRYSTAL-PTH-2X6-CYL-KIT">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-5X3.2-2PAD" package="CRYSTAL-SMD-5X3.2-2PAD">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-3.2X1.5" package="CRYSTAL-SMD-3.2X1.5MM">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMD-3.2X2.5" package="CRYSTAL-SMD-3.2X2.5MM">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SparkFun-Capacitors">
 <description>&lt;h3&gt;SparkFun Capacitors&lt;/h3&gt;
 This library contains capacitors. 
@@ -2566,6 +2036,52 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="CalPlug">
+<packages>
+<package name="HC-49S">
+<smd name="2" x="4.75" y="0" dx="5.5" dy="2" layer="1"/>
+<smd name="1" x="-4.75" y="0" dx="5.5" dy="2" layer="1"/>
+<wire x1="5.7" y1="-2.4" x2="-5.7" y2="-2.4" width="0.127" layer="21"/>
+<wire x1="-5.7" y1="-2.4" x2="-5.7" y2="2.4" width="0.127" layer="21"/>
+<wire x1="-5.7" y1="2.4" x2="5.7" y2="2.4" width="0.127" layer="21"/>
+<wire x1="5.7" y1="2.4" x2="5.7" y2="-2.4" width="0.127" layer="21"/>
+<text x="-3.4" y="-4.1" size="1.27" layer="21">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="CRISTAL_2PINS">
+<pin name="1" x="-7.62" y="5.08" visible="off" length="middle"/>
+<pin name="2" x="7.62" y="5.08" visible="off" length="middle" rot="R180"/>
+<wire x1="-2.54" y1="8.89" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="8.89" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="8.89" width="0.254" layer="94"/>
+<wire x1="1.27" y1="8.89" x2="-1.27" y2="8.89" width="0.254" layer="94"/>
+<wire x1="2.54" y1="8.89" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<text x="-1.27" y="-1.27" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="QUARTZ_3.58M_2PIN">
+<gates>
+<gate name="G$1" symbol="CRISTAL_2PINS" x="2.54" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="HC-49S">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="http://www.digikey.com/product-detail/en/txc-corporation/9C-3.579545MBBK-T/887-2450-1-ND/4475440"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2606,8 +2122,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND14" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND9" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND11" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
-<part name="X1" library="SparkFun-Clocks" deviceset="CRYSTAL" device="SMD-MC146" value="4MHz"/>
 <part name="J1-5" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="AD_CH5- GND option"/>
+<part name="X1" library="CalPlug" deviceset="QUARTZ_3.58M_2PIN" device="" value="4MHZ"/>
 </parts>
 <sheets>
 <sheet>
@@ -2704,9 +2220,9 @@ Connector</text>
 <attribute name="NAME" x="63.119" y="80.391" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="60.579" y="75.311" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="C2" gate="G$1" x="73.025" y="77.47">
-<attribute name="NAME" x="74.549" y="80.391" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="74.549" y="75.946" size="1.778" layer="96" font="vector"/>
+<instance part="C2" gate="G$1" x="84.80551875" y="77.472540625">
+<attribute name="NAME" x="86.32951875" y="80.393540625" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="86.32951875" y="75.948540625" size="1.778" layer="96" font="vector"/>
 </instance>
 <instance part="J1-0" gate="1" x="-43.815" y="118.11">
 <attribute name="NAME" x="-42.037" y="116.332" size="1.778" layer="95"/>
@@ -2743,19 +2259,18 @@ Connector</text>
 <instance part="GND14" gate="1" x="-54.61" y="59.69">
 <attribute name="VALUE" x="-54.61" y="59.436" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="GND9" gate="1" x="69.85" y="69.85">
-<attribute name="VALUE" x="69.85" y="69.596" size="1.778" layer="96" align="top-center"/>
+<instance part="GND9" gate="1" x="75.596240625" y="69.783453125">
+<attribute name="VALUE" x="75.596240625" y="69.529453125" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="GND11" gate="1" x="-54.864" y="92.202">
 <attribute name="VALUE" x="-54.864" y="91.948" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="X1" gate="G$1" x="69.85" y="85.09" rot="R180">
-<attribute name="NAME" x="69.85" y="83.058" size="1.778" layer="95" font="vector" rot="R180" align="bottom-center"/>
-<attribute name="VALUE" x="69.85" y="87.122" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
-</instance>
 <instance part="J1-5" gate="1" x="-43.18" y="62.23">
 <attribute name="NAME" x="-41.91" y="60.325" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-50.165" y="58.42" size="1.778" layer="96"/>
+</instance>
+<instance part="X1" gate="G$1" x="75.55738125" y="80.180178125">
+<attribute name="NAME" x="74.28738125" y="78.910178125" size="1.27" layer="95"/>
 </instance>
 </instances>
 <busses>
@@ -2829,13 +2344,11 @@ Connector</text>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="66.675" y1="72.39" x2="69.85" y2="72.39" width="0.1524" layer="91"/>
-<wire x1="69.85" y1="72.39" x2="73.025" y2="72.39" width="0.1524" layer="91"/>
-<wire x1="73.025" y1="74.93" x2="73.025" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="66.675" y1="72.39" x2="75.596240625" y2="72.323453125" width="0.1524" layer="91"/>
 <wire x1="66.675" y1="72.39" x2="66.675" y2="74.93" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
-<junction x="69.85" y="72.39"/>
+<junction x="75.596240625" y="72.323453125"/>
+<wire x1="75.596240625" y1="72.323453125" x2="80.14461875" y2="72.39" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
@@ -3145,14 +2658,14 @@ Connector</text>
 </net>
 <net name="OSC_1" class="0">
 <segment>
-<wire x1="67.31" y1="85.09" x2="66.675" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="66.675" y1="82.55" x2="66.675" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="OSC1"/>
 <wire x1="27.94" y1="88.9" x2="66.675" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="66.675" y1="88.9" x2="66.675" y2="85.09" width="0.1524" layer="91"/>
-<junction x="66.675" y="85.09"/>
-<pinref part="X1" gate="G$1" pin="2"/>
+<wire x1="66.675" y1="88.9" x2="66.675" y2="82.55" width="0.1524" layer="91"/>
+<pinref part="X1" gate="G$1" pin="1"/>
+<wire x1="67.93738125" y1="85.260178125" x2="66.675" y2="85.260178125" width="0.1524" layer="91"/>
+<wire x1="66.675" y1="85.260178125" x2="66.675" y2="82.55" width="0.1524" layer="91"/>
+<junction x="66.675" y="82.55"/>
 </segment>
 </net>
 <net name="ADC_DR_B" class="0">
@@ -3189,14 +2702,14 @@ Connector</text>
 </net>
 <net name="OSC_2" class="0">
 <segment>
-<wire x1="72.39" y1="85.09" x2="73.025" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="73.025" y1="85.09" x2="73.025" y2="82.55" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="OSC2"/>
-<wire x1="27.94" y1="91.44" x2="73.025" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="73.025" y1="91.44" x2="73.025" y2="85.09" width="0.1524" layer="91"/>
-<junction x="73.025" y="85.09"/>
-<pinref part="X1" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="91.44" x2="84.858859375" y2="91.4933375" width="0.1524" layer="91"/>
+<wire x1="84.858859375" y1="91.4933375" x2="84.80551875" y2="82.552540625" width="0.1524" layer="91"/>
+<pinref part="X1" gate="G$1" pin="2"/>
+<wire x1="83.17738125" y1="85.260178125" x2="84.80551875" y2="85.260178125" width="0.1524" layer="91"/>
+<wire x1="84.80551875" y1="85.260178125" x2="84.80551875" y2="82.552540625" width="0.1524" layer="91"/>
+<junction x="84.80551875" y="82.552540625"/>
 </segment>
 </net>
 <net name="ADC_DR_C" class="0">
@@ -3217,6 +2730,13 @@ Connector</text>
 <wire x1="-8.89" y1="71.12" x2="-8.89" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="REFIN/OUT+"/>
 <wire x1="-8.89" y1="73.66" x2="-7.62" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="79.764940625" y1="72.3956125" x2="84.80551875" y2="72.3956125" width="0.1524" layer="91"/>
+<wire x1="84.80551875" y1="72.3956125" x2="84.80551875" y2="74.932540625" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
