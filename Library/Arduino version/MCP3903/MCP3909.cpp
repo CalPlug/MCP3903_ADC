@@ -16,6 +16,8 @@ University of California, Irvine
 
 #include "MCP3903.h"
 #include <SPI.h>
+//#define unsigned char uint8_t //redefine uint8_t as unsigned char if type not defined, this has already been done, unsigned char is just an Arduino compatable variable type equiv. to byte
+
 
 
 MCP3903::MCP3903()
