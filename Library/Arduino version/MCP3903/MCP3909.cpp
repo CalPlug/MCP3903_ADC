@@ -17,12 +17,13 @@ University of California, Irvine
 #include "MCP3903.h"
 #include <SPI.h>
 
-MCP3903::MCP3903
+
+MCP3903::MCP3903()
 {
  //Create object
 }
 
-MCP3903::init() //underloaded function, no changes from default pins used for SPI
+void MCP3903::init() //underloaded function, no changes from default pins used for SPI
 {   
 	//use default Arduino Uno pins
 	pinMode(pinMOSI, OUTPUT);
@@ -33,13 +34,13 @@ MCP3903::init() //underloaded function, no changes from default pins used for SP
     digitalWrite(pinCS, HIGH); //start with CS/SS idle
 }
 
-MCP3903::init(int _pinMOSI, int _pinMISO, int _pinSPIClock, int _pinCS)
+void MCP3903::init(int _pinMOSI, int _pinMISO, int _pinSPIClock, int _pinCS)
 {   
     //read in inputs for the pins in use, then copy to the private variable used after initialization of the object
-	pinMOSI = _pinMOSI
-	pinMISO = _pinMISO
-	pinSPIClock = _pinSPIClock
-	pinCS = _pinCS
+	pinMOSI = _pinMOSI;
+	pinMISO = _pinMISO;
+	pinSPIClock = _pinSPIClock;
+	pinCS = _pinCS;
 	
 	pinMode(pinMOSI, OUTPUT);
     pinMode(pinMISO, INPUT);
@@ -57,7 +58,7 @@ void MCP3903::reset()  //underloaded version of the function, defaults to OSR_25
 }
 
 
-void MCP3903::reset(byte osr)
+void MCP3903::reset(unsigned char osr)
 {
 	//set to resolution specified by OSR
 	//OSR_32  11 = 256
@@ -67,7 +68,7 @@ void MCP3903::reset(byte osr)
 
 	unsigned long cmd1 = 0xfc0fd0;
 	unsigned long cmd2 = 0x000fc0 | osr << 4;
-	byte cmdByte = 	DEVICE_ADDR | REG_CONFIG << 1;
+	//unsigned char cmdByte = DEVICE_ADDR | REG_CONFIG << 1;  //may be redundant, now taken care of in writeRegister(X,X)
 
 	writeRegister(REG_CONFIG, cmd1);
 	writeRegister(REG_CONFIG, cmd2);
@@ -75,9 +76,9 @@ void MCP3903::reset(byte osr)
 
 //read from specified register
 //returns 24 bit data
-unsigned long MCP3903::readRegister(byte reg)
+unsigned long MCP3903::readRegister(unsigned char reg)
 {
-	byte cmdByte = DEVICE_ADDR | reg <<1 | 1;
+	unsigned char cmdByte = DEVICE_ADDR | reg <<1 | 1;
 	unsigned long r = 0;
 
 	digitalWrite(pinCS, LOW);
@@ -91,13 +92,13 @@ unsigned long MCP3903::readRegister(byte reg)
 }
 
 //write 24 bit data to register
-void MCP3903::writeRegister(byte reg, unsigned long data)
+void MCP3903::writeRegister(unsigned char reg, unsigned long data)
 {
-	byte cmdByte = DEVICE_ADDR | reg <<1;
+	unsigned char cmdByte = DEVICE_ADDR | reg <<1;
 	
-	byte b2 = (data & 0xff0000) >> 16;
-	byte b1 = (data & 0x00ff00) >> 8;
-	byte b0 = data & 0x0000ff;
+	unsigned char b2 = (data & 0xff0000) >> 16;
+	unsigned char b1 = (data & 0x00ff00) >> 8;
+	unsigned char b0 = data & 0x0000ff;
 
 	digitalWrite(pinCS, LOW);
 	SPI.transfer(cmdByte);
@@ -108,7 +109,7 @@ void MCP3903::writeRegister(byte reg, unsigned long data)
 }
 
 //read from ADC channel (0-5)
-double MCP3903::readADC(byte channel)
+double MCP3903::readADC(unsigned char channel)
 {
 	unsigned long r = readRegister(channel);
 
@@ -126,18 +127,18 @@ double MCP3903::readADC(byte channel)
 //GAIN_8
 //GAIN_16
 //GAIN_32
-void MCP3903::setGain(byte channel, byte gain) 
+void MCP3903::setGain(unsigned char channel, unsigned char gain) 
 {
 	setGain(channel, gain, 0);
 }
 
 //overloaded setGain
 //the boost parameter indicates the current boost setting for channel
-void MCP3903::setGain(byte channel, byte gain, byte boost)
+void MCP3903::setGain(unsigned char channel, unsigned char gain, unsigned char boost)
 {
 	unsigned long r = readRegister(REG_GAIN);
 
-	byte idx = channel * 4;
+	unsigned char idx = channel * 4;
 	unsigned long chGain = 0;
 
 	if (channel % 2 == 0) //0, 2, 4

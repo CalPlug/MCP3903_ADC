@@ -1,6 +1,7 @@
-//mcp3903example.ino
-//Arduino example for the MCP3903
-/*Extended from the Arduino Library for MCP3903 A/D Converter
+/*
+mcp3903example.ino
+Arduino example for the MCP3903 - Example tested 
+Extended from the Arduino Library for MCP3903 A/D Converter
  * MCP3903 Library
  * Kerry D. Wong
  * http://www.kerrywong.com, http://www.kerrywong.com/2014/05/10/mcp3903-library/, https://github.com/kerrydwong/MCP3903) * 5/2014
@@ -20,13 +21,13 @@ SPISettings settingsA(2000000, MSBFIRST, SPI_MODE0); //settings for the SPI for 
 void setup()
 {
     SPI.begin(); //Start SPI
-	mcp3903.init(11, 12, 13, 10) // Setings for your Arduino's SPI pins used for interfacing(pinMOSI, pinMISO, pinSPIClock, pinCS)
+	  mcp3903.init(11, 12, 13, 10); // Setings for your Arduino's SPI pins used for interfacing(pinMOSI, pinMISO, pinSPIClock, pinCS)
     Serial.begin(9600); //printo tout on serial monitor at 9600bps
     //Set your pins in the library
     SPI.beginTransaction(settingsA); //Start SPI transaction
-	mcp3903.reset(MCP3903::OSR_256); 
+	  mcp3903.reset(MCP3903::OSR_256); 
     mcp3903.setGain(1,MCP3903::GAIN_8);
-	SPI.endTransaction(); //End SPI transaction	
+	  SPI.endTransaction(); //End SPI transaction	
 }
 
 double ch1_gain = 2.36; //Your calibration gain for Ch1- (a default value of 2.36 is used in relation to the reference voltage, this may vary)
