@@ -17,21 +17,21 @@
 Modified for use for the Microsemi Future Creative Board by Yutian Ren and Michael Klopfer, Ph.D.
 University of California, Irvine
 2018
+
+Further modified back to Arduino usage again from the Microsemi version
+Michael Klopfer, Ph.D.
+University of California, Irvine
+2019
+
 */
 
-#include "drivers\CoreSPI\core_spi.h"
-
-//Define non-standard C variable types for this scope
-typedef char byte; //define "byte" using char - char is defined as 1 byte
-//typedef __uint32_t uint32_t ; //Define uint32_t for this scope (if needed)
-//typedef __uint8_t uint8_t ; //Define uint8_t for this scope (if needed)
-
-
-//**** MCP3903 Registers*****
+class MCP3903 {
+public:
+	//command byte
 	static const byte DEVICE_ADDR = 0x40;
 
 	//***** register map *****
-	//read-only channel registers
+	//readonly channel registers 
 	//24bit MSB first, left justified
 	static const byte REG_CH_0 = 0x00;
 	static const byte REG_CH_1 = 0x01;
@@ -49,7 +49,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	//bit 3-9   COMPn_CH0
 	//default 0011 0011 0011 0011 0011 0011
 	static const byte REG_MOD = 0x06;
-
+	
 	//phase delay config register 24bit
 	//bit 23-16 CH4 relative to CH5 phase delay (2's comp positive means lag)
 	//bit 15-8  CH2 relative to CH3 phase delay
@@ -74,7 +74,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	//001 gain = 2
 	//000 gain = 1
 	//
-	//BOOST
+	//BOOST 
 	//1 (channel current x2)
 	//0 (channel current normal)
 	static const byte REG_GAIN = 0x08;
@@ -85,7 +85,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	static const byte GAIN_8 = 0x3;
 	static const byte GAIN_16 = 0x4;
 	static const byte GAIN_32 = 0x5;
-
+	
 	//status/communication register 24bit
 	//DEFAULT: 0x804000
 	//bit 23-22 Address Loop Setting
@@ -99,7 +99,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	//0 = incremental addressing write mode (default)
 	//
 	//bit 20-15 WIDTH_CHn
-	//1 = 24 bit
+	//1 = 24 bit 
 	//0 = 16 bit (default)
 	//
 	//bit 14 DR_LTY (data ready latency control for DRA, DRB and DRC pins)
@@ -126,7 +126,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	//bit 5-0 DRSTATUS_CHn (Data Ready Status)
 	//1 = data not ready (default)
 	//0 = data ready
-	static const byte REG_STATUS_COMM = 0x09;
+	static const byte REG_STATUS_COMM = 0x09;	
 
 	//config register 24bit
 	//DEFAULT: 0x000FD0
@@ -138,9 +138,9 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	//1 = shutdown mode for channel n on
 	//0 = shutdown mode for channel n off (default)
 	//
-	//bit 11-6 DITHER_CHn
+	//bit 11-6 DITHER_CHn 
 	//1 = dithering channel n on (default)
-	//0 = dithering channel n off
+	//0 = dithering channel n off 
 	//
 	//bit 5-4 OSR (over sampling ratio)
 	//11 = 256
@@ -170,7 +170,7 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 
 	// loop chn0-5, MOD/PHASE/GAIN/STAT/CONFIG
 	static const byte READ_OPTION_TYPE = 0x10;
-
+	
 	//loop through entire reg map
 	static const byte READ_OPTION_ALL = 0x11;
 
@@ -179,15 +179,24 @@ typedef char byte; //define "byte" using char - char is defined as 1 byte
 	static const byte OSR_128 = 0x2;
 	static const byte OSR_256 = 0x3;
 
-// Function Routines
-	void MCP3903Reset24(spi_instance_t * this_spi);
-	void MCP3903ResetOSR(byte osr, spi_instance_t * this_spi);
-	unsigned long MCP3903ReadRegister(byte reg, spi_instance_t * this_spi);
-	void MCP3903WriteRegister(byte reg, unsigned long data, spi_instance_t * this_spi);
-	unsigned long readControlRegister(spi_instance_t * this_spi);
-	unsigned long readStatusCommRegister(spi_instance_t * this_spi);
-	double MCP3903ReadADC(byte channel, spi_instance_t * this_spi);
-	void MCP3903SetGain(byte channel, byte gain, spi_instance_t * this_spi);
-	void MCP3903SetGainCB(byte channel, byte gain, byte boost, spi_instance_t * this_spi);
-
-#endif /* SRC_MCP3903_H_ */
+	MCP3903();
+	void init(); //underloaded version with default pins
+	void init(int _pinMOSI, int _pinMISO, int _pinSPIClock, int _pinCS); //pins can be specified at function run
+	void reset();
+	void reset(byte osr);
+	unsigned long readRegister(byte reg);
+	void writeRegister(byte reg, unsigned long data);
+	unsigned long readControlRegister();
+	unsigned long readStatusCommRegister();
+	double readADC(byte channel);
+	void setGain(byte channel, byte gain);
+	void setGain(byte channel, byte gain, byte boost);
+private:
+//Define your device pins here for SPI and the SS connection
+    // default values here will be overwritten after calling the init(int _pinMOSI, int _pinMISO, int _pinSPIClock, int _pinCS) function, left alone calling the init() function
+    int pinMOSI = 11; //MOSI
+    int pinMISO = 12; //MISO
+    int pinSPIClock = 13; //SCK
+    int pinCS = 10; //CS
+};
+#endif
