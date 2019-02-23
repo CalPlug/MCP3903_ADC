@@ -194,15 +194,7 @@ public:
 	void setGain(unsigned char channel, unsigned char gain, unsigned char boost);
 private:
 //Define your device pins here for SPI and the SS connection
-<<<<<<< HEAD
     // default values here will be overwritten after calling the init(int _pinCS) function, left alone calling the init() function
     int pinCS = 10; //CS Default
-=======
-    // default values here will be overwritten after calling the init(int _pinMOSI, int _pinMISO, int _pinSPIClock, int _pinCS) function, left alone calling the init() function
-    int pinMOSI = 13; //MOSI
-    int pinMISO = 12; //MISO
-    int pinSPIClock = 14; //SCK
-    int pinCS = 15; //CS
->>>>>>> e024b8fc2b047d0c30d98bbde354d0809061f708
 };
 #endif
