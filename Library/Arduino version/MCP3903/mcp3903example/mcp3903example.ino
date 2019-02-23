@@ -41,14 +41,19 @@ void setup()
     //esp.begin(); Needed with ESP8266 for ESP class functions
 	Serial.begin(9600); //set serial comm at 9600 bps
 	SPI.begin(); //Start SPI
+	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters 
     mymcp3903.init(15); // Setings for your Arduino's SPI pins used for interfacing(pinCS)
     mymcp3903.reset(MCP3903::OSR_256); 
     mymcp3903.setGain(1,MCP3903::GAIN_8);
+	SPI.endTransaction(); //End SPI transaction
+
 }
 
 
 void loop()
 {
+	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters 
+
     //Print out the ADC value of channel 0
 	
 	
@@ -74,4 +79,5 @@ void loop()
 	
 
     delay(100);  //Delay, then rerun loop to read sensors
+	//SPI.endTransaction(); //End SPI transaction - we are keeping this open for this example
 }
