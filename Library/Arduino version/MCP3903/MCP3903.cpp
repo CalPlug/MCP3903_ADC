@@ -78,14 +78,14 @@ unsigned long MCP3903::readRegister(unsigned char reg)
 	unsigned char cmdByte = DEVICE_ADDR | reg <<1 | 1;
 	unsigned long r = 0;
 	SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
-	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction
-	digitalWrite(pinCS, LOW);
+	SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters
+	digitalWrite(pinCS, LOW); //Start communication in LOW sate for the SS pin
 	SPI.transfer(cmdByte);
 	r = (unsigned long) SPI.transfer(0x0) << 16;
 	r |= (unsigned long) SPI.transfer(0x0) << 8;
 	r |= (unsigned long) SPI.transfer(0x0);
-	digitalWrite(pinCS, HIGH);
 	SPI.endTransaction(); //End SPI transaction
+	digitalWrite(pinCS, HIGH);
 
 	return r;
 }
@@ -100,14 +100,14 @@ void MCP3903::writeRegister(unsigned char reg, unsigned long data)
 	unsigned char b0 = data & 0x0000ff;
 
    SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
-    SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction
-	digitalWrite(pinCS, LOW);
+    SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters
+	digitalWrite(pinCS, LOW);  //Start communication in LOW sate for the SS pin
 	SPI.transfer(cmdByte);
 	SPI.transfer(b2);
 	SPI.transfer(b1);
 	SPI.transfer(b0);
-	digitalWrite(pinCS, HIGH);	
 	SPI.endTransaction(); //End SPI transaction
+	digitalWrite(pinCS, HIGH);	
 }
 
 //read from ADC channel (0-5)
