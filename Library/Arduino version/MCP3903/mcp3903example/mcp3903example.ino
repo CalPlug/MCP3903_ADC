@@ -45,6 +45,7 @@ void setup()
     mymcp3903.init(15); // Setings for your Arduino's SPI pins used for interfacing(pinCS)
     mymcp3903.reset(MCP3903::OSR_256); 
     mymcp3903.setGain(1,MCP3903::GAIN_8);
+	//Need to initialize all channels to use
 	SPI.endTransaction(); //End SPI transaction
 
 }
@@ -54,12 +55,14 @@ void loop()
 {
 	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters 
 
-    //Print out the ADC value of channel 0
+    /*
+	//Print out the ADC value of channel 0
 	Serial.print("Channel 0 ADC Value: "); //Start your line here
     double ch0 = mymcp3903.readADC(0);
     double ch0Cal = (ch0* ch0_gain)+ch0_offset;
     Serial.println(ch0);//Add value then end your line
 	delay(10);  //Delay before next Ch read (totally optional)
+	*/
 	
 	//Print out the ADC value of channel 1
     Serial.print("Channel 1 ADC Value: "); //Start your line here
@@ -67,6 +70,7 @@ void loop()
     double ch1Cal = (ch1* ch1_gain)+ch1_offset;
     Serial.println(ch1);//Add value then end your line
 	delay(10);  //Delay before next Ch read (totally optional)
+	/*
 	
 	//Print out the ADC value of channel 2
     Serial.print("Channel 2 ADC Value: "); //Start your line here
@@ -95,6 +99,7 @@ void loop()
     double ch5Cal = (ch5* ch5_gain)+ch5_offset;
     Serial.println(ch5);//Add value then end your line
 	delay(10);  //Delay before next Ch read (totally optional)
+	*/
 	
 	
     delay(100);  //Delay, then re-run loop to read sensors again

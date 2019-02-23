@@ -83,7 +83,7 @@ unsigned long MCP3903::readRegister(unsigned char reg)
 	r |= (unsigned long) SPI.transfer(0x0) << 8;
 	r |= (unsigned long) SPI.transfer(0x0);
 	digitalWrite(pinCS, HIGH);
-	delayMicroseconds(10); //make sure there is a delay before calling SPI again
+	//delayMicroseconds(10); //make sure there is a delay before calling SPI again
 	return r;
 }
 
@@ -103,7 +103,7 @@ void MCP3903::writeRegister(unsigned char reg, unsigned long data)
 	SPI.transfer(b1);
 	SPI.transfer(b0);
 	digitalWrite(pinCS, HIGH);	
-	delayMicroseconds(10); //make sure there is a delay before calling SPI again
+	//delayMicroseconds(10); //make sure there is a delay before calling SPI again
 }
 
 //read from ADC channel (0-5)
@@ -135,7 +135,6 @@ void MCP3903::setGain(unsigned char channel, unsigned char gain)
 void MCP3903::setGain(unsigned char channel, unsigned char gain, unsigned char boost)
 {
 	unsigned long r = readRegister(REG_GAIN);
-
 	unsigned char idx = channel * 4;
 	unsigned long chGain = 0;
 
