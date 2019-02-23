@@ -11,10 +11,30 @@ University of California, Irvine
 */
 #include <SPI.h>
 #include "MCP3903.h"
+
+
 //Set the gains and offsets for your ADC channels:
+#define ch0_gain 1.0
+#define ch0_offset 0.0
+
 #define ch1_gain 1.0
 #define ch1_offset 0.0
+
+#define ch2_gain 1.0
+#define ch2_offset 0.0
+
+#define ch3_gain 1.0
+#define ch3_offset 0.0
+
+#define ch4_gain 1.0
+#define ch4_offset 0.0
+
+#define ch5_gain 1.0
+#define ch5_offset 0.0
+
+
 MCP3903 mymcp3903;  //Initialize object
+
 void setup()
 {
     SPI.begin(); //Start SPI
@@ -23,12 +43,33 @@ void setup()
       mymcp3903.reset(MCP3903::OSR_256); 
     mymcp3903.setGain(1,MCP3903::GAIN_8);
 }
+
+
 void loop()
 {
-    //example to print out the ADC value of channel 1
+    //Print out the ADC value of channel 0
+	
+	
+	//Print out the ADC value of channel 1
     Serial.print("Channel 1 ADC Value: "); //Start your line here
-    double Ch1 = mymcp3903.readADC(1);
-    double Ch1Cal = (Ch1* ch1_gain)+ch1_offset;
-      Serial.println(Ch1);//Add value then end your line
-    delay(100);  //Delay, then rerun loop
+    double ch1 = mymcp3903.readADC(1);
+    double ch1Cal = (ch1* ch1_gain)+ch1_offset;
+    Serial.println(ch1);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
+	
+	//Print out the ADC value of channel 2
+    Serial.print("Channel 2 ADC Value: "); //Start your line here
+    double ch2 = mymcp3903.readADC(2);
+    double ch2Cal = (ch2* ch2_gain)+ch2_offset;
+    Serial.println(ch2);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
+	
+	//Print out the ADC value of channel 3
+	
+	//Print out the ADC value of channel 4
+	
+	//Print out the ADC value of channel 5
+	
+
+    delay(100);  //Delay, then rerun loop to read sensors
 }
