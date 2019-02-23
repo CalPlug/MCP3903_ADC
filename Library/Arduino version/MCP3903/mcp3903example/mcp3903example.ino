@@ -55,7 +55,11 @@ void loop()
 	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters 
 
     //Print out the ADC value of channel 0
-	
+	Serial.print("Channel 0 ADC Value: "); //Start your line here
+    double ch0 = mymcp3903.readADC(0);
+    double ch0Cal = (ch0* ch0_gain)+ch0_offset;
+    Serial.println(ch0);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
 	
 	//Print out the ADC value of channel 1
     Serial.print("Channel 1 ADC Value: "); //Start your line here
@@ -72,12 +76,27 @@ void loop()
 	delay(10);  //Delay before next Ch read (totally optional)
 	
 	//Print out the ADC value of channel 3
+	Serial.print("Channel 3 ADC Value: "); //Start your line here
+    double ch3 = mymcp3903.readADC(3);
+    double ch3Cal = (ch3* ch3_gain)+ch3_offset;
+    Serial.println(ch3);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
 	
 	//Print out the ADC value of channel 4
+	Serial.print("Channel 4 ADC Value: "); //Start your line here
+    double ch4 = mymcp3903.readADC(4);
+    double ch4Cal = (ch4* ch4_gain)+ch4_offset;
+    Serial.println(ch4);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
 	
 	//Print out the ADC value of channel 5
+	Serial.print("Channel 5 ADC Value: "); //Start your line here
+    double ch5 = mymcp3903.readADC(5);
+    double ch5Cal = (ch5* ch5_gain)+ch5_offset;
+    Serial.println(ch5);//Add value then end your line
+	delay(10);  //Delay before next Ch read (totally optional)
 	
-
-    delay(100);  //Delay, then rerun loop to read sensors
+	
+    delay(100);  //Delay, then re-run loop to read sensors again
 	//SPI.endTransaction(); //End SPI transaction - we are keeping this open for this example
 }
