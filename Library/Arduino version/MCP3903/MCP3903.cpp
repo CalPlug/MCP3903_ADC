@@ -21,7 +21,7 @@ University of California, Irvine
 
 MCP3903::MCP3903()
 {
- //Create 
+ //Create Object only
 
 }
 
