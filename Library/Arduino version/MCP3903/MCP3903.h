@@ -195,9 +195,11 @@ public:
 private:
 //Define your device pins here for SPI and the SS connection
     // default values here will be overwritten after calling the init(int _pinCS) function, left alone calling the init() function, these are the Arduino Uno Defaults
+    //ESP8266 doesn't use these initialized
     static const int pinMOSI = 11; //MOSI
     static const int pinMISO = 12; //MISO
     static const int pinSPIClock = 13; //SCK
+	
     static const int pinCS = 10; //CS Default
 
 };
