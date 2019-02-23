@@ -34,14 +34,14 @@ University of California, Irvine
 #define ch5_offset 0.0
 
 
-MCP3903 mymcp3903;  //Initialize object
+MCP3903 mymcp3903;  //Initialize mymcp3903 object for the MCP3903 
 
 void setup()
 {
     //esp.begin(); Needed with ESP8266 for ESP class functions
+	Serial.begin(9600); //set serial comm at 9600 bps
 	SPI.begin(); //Start SPI
     mymcp3903.init(15); // Setings for your Arduino's SPI pins used for interfacing(pinCS)
-    Serial.begin(9600); //set serial comm at 9600 bps
     mymcp3903.reset(MCP3903::OSR_256); 
     mymcp3903.setGain(1,MCP3903::GAIN_8);
 }
