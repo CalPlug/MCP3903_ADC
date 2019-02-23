@@ -32,7 +32,7 @@ void MCP3903::init() //underloaded function, no changes from default pins used f
     digitalWrite(pinCS, HIGH); //start with CS/SS idle
 }
 
-void MCP3903::init(int _pinCS)
+void MCP3903::init(int _pinCS) //Only CS pin initialized, used for ESP8266
 {   
     //read in inputs for the pins in use, then copy to the private variable used after initialization of the object
 
@@ -43,7 +43,6 @@ void MCP3903::init(int _pinCS)
    // pinMode(pinMISO, INPUT);
     //pinMode(pinSPIClock, OUTPUT);
     pinMode(pinCS, OUTPUT);
-
     digitalWrite(pinCS, HIGH); //start with CS/SS idle
 }
 
@@ -86,7 +85,6 @@ unsigned long MCP3903::readRegister(unsigned char reg)
 	r |= (unsigned long) SPI.transfer(0x0);
 	SPI.endTransaction(); //End SPI transaction
 	digitalWrite(pinCS, HIGH);
-
 	return r;
 }
 
@@ -99,7 +97,7 @@ void MCP3903::writeRegister(unsigned char reg, unsigned long data)
 	unsigned char b1 = (data & 0x00ff00) >> 8;
 	unsigned char b0 = data & 0x0000ff;
 
-   SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
+    SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
     SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters
 	digitalWrite(pinCS, LOW);  //Start communication in LOW sate for the SS pin
 	SPI.transfer(cmdByte);

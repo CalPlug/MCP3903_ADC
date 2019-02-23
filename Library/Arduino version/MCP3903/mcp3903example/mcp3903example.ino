@@ -9,6 +9,7 @@ Modified for use for the Microsemi Future Creative Board by Yutian Ren and Micha
 University of California, Irvine
 2018
 */
+
 #include <SPI.h>
 #include "MCP3903.h"
 
@@ -37,10 +38,11 @@ MCP3903 mymcp3903;  //Initialize object
 
 void setup()
 {
-    SPI.begin(); //Start SPI
-      mymcp3903.init(15); // Setings for your Arduino's SPI pins used for interfacing(pinCS)
+    //esp.begin(); Needed with ESP8266 for ESP class functions
+	SPI.begin(); //Start SPI
+    mymcp3903.init(15); // Setings for your Arduino's SPI pins used for interfacing(pinCS)
     Serial.begin(9600); //set serial comm at 9600 bps
-      mymcp3903.reset(MCP3903::OSR_256); 
+    mymcp3903.reset(MCP3903::OSR_256); 
     mymcp3903.setGain(1,MCP3903::GAIN_8);
 }
 
