@@ -38,8 +38,8 @@ void MCP3903::init(int _pinCS)
 
 	pinCS = _pinCS;
 	
-	//Do not initialize SPI pins other than SS
-	//pinMode(pinMOSI, OUTPUT);
+   //Do not initialize SPI pins other than SS for ESP32
+    //pinMode(pinMOSI, OUTPUT);
    // pinMode(pinMISO, INPUT);
     //pinMode(pinSPIClock, OUTPUT);
     pinMode(pinCS, OUTPUT);
