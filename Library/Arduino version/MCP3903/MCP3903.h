@@ -7,7 +7,7 @@
 
 #ifndef SRC_MCP3903_H_
 #define SRC_MCP3903_H_
-//#define unsigned char uint8_t //redefine uint8_t as unsigned char if type not defined, this has already been done, unsigned char is just an Arduino compatable variable type equiv. to byte
+//Note, if you are not using arduino, you may have to redefine "byte" as "unsigned char" as a type, example: unsigned char uint8_t //redefine uint8_t as unsigned char if type not defined, this has already been done, unsigned char is just an Arduino compatable variable type equiv. to byte
 
 /*
  Extended from the Arduino Library for MCP3903 A/D Converter
@@ -29,17 +29,17 @@ University of California, Irvine
 class MCP3903 {
 public:
 	//command byte
-	static const unsigned char DEVICE_ADDR = 0x40;
+	static const byte DEVICE_ADDR = 0x40;
 
 	//***** register map *****
 	//readonly channel registers 
 	//24bit MSB first, left justified
-	static const unsigned char REG_CH_0 = 0x00;
-	static const unsigned char REG_CH_1 = 0x01;
-	static const unsigned char REG_CH_2 = 0x02;
-	static const unsigned char REG_CH_3 = 0x03;
-	static const unsigned char REG_CH_4 = 0x04;
-	static const unsigned char REG_CH_5 = 0x05;
+	static const byte REG_CH_0 = 0x00;
+	static const byte REG_CH_1 = 0x01;
+	static const byte REG_CH_2 = 0x02;
+	static const byte REG_CH_3 = 0x03;
+	static const byte REG_CH_4 = 0x04;
+	static const byte REG_CH_5 = 0x05;
 
 	//Delta-sigma modulators output value 24bit
 	//bit 23-20 COMPn_CH5
@@ -49,13 +49,13 @@ public:
 	//bit 7-4   COMPn_CH1
 	//bit 3-9   COMPn_CH0
 	//default 0011 0011 0011 0011 0011 0011
-	static const unsigned char REG_MOD = 0x06;
+	static const byte REG_MOD = 0x06;
 	
 	//phase delay config register 24bit
 	//bit 23-16 CH4 relative to CH5 phase delay (2's comp positive means lag)
 	//bit 15-8  CH2 relative to CH3 phase delay
 	//bit 7-0   CH0 relative to CH1 phase delay
-	static const unsigned char REG_PHASE = 0x07;
+	static const byte REG_PHASE = 0x07;
 
 	//gain config register 24bit
 	//bit 23, 22, 21 CH5, bit 20 BOOST_CH5
@@ -78,14 +78,14 @@ public:
 	//BOOST 
 	//1 (channel current x2)
 	//0 (channel current normal)
-	static const unsigned char REG_GAIN = 0x08;
+	static const byte REG_GAIN = 0x08;
 
-	static const unsigned char GAIN_1 = 0x0;
-	static const unsigned char GAIN_2 = 0x1;
-	static const unsigned char GAIN_4 = 0x2;
-	static const unsigned char GAIN_8 = 0x3;
-	static const unsigned char GAIN_16 = 0x4;
-	static const unsigned char GAIN_32 = 0x5;
+	static const byte GAIN_1 = 0x0;
+	static const byte GAIN_2 = 0x1;
+	static const byte GAIN_4 = 0x2;
+	static const byte GAIN_8 = 0x3;
+	static const byte GAIN_16 = 0x4;
+	static const byte GAIN_32 = 0x5;
 	
 	//status/communication register 24bit
 	//DEFAULT: 0x804000
@@ -127,7 +127,7 @@ public:
 	//bit 5-0 DRSTATUS_CHn (Data Ready Status)
 	//1 = data not ready (default)
 	//0 = data ready
-	static const unsigned char REG_STATUS_COMM = 0x09;	
+	static const byte REG_STATUS_COMM = 0x09;	
 
 	//config register 24bit
 	//DEFAULT: 0x000FD0
@@ -162,36 +162,36 @@ public:
 	//bit 0 EXTCLK (clock mode)
 	//1 = CLOCK mode (internal osc disabled)
 	//0 = XT mode (crystal between OSC1/OSC2) (default)
-	static const unsigned char REG_CONFIG = 0x0A;
+	static const byte REG_CONFIG = 0x0A;
 	//***************************
 
 	//loop chn0/1, chn2/3, chn4/5
 	// MOD/PHASE/GAIN, STAT/CONFIG
-	static const unsigned char READ_OPTION_GROUP = 0x01;
+	static const byte READ_OPTION_GROUP = 0x01;
 
 	// loop chn0-5, MOD/PHASE/GAIN/STAT/CONFIG
-	static const unsigned char READ_OPTION_TYPE = 0x10;
+	static const byte READ_OPTION_TYPE = 0x10;
 	
 	//loop through entire reg map
-	static const unsigned char READ_OPTION_ALL = 0x11;
+	static const byte READ_OPTION_ALL = 0x11;
 
-	static const unsigned char OSR_32 = 0x0;
-	static const unsigned char OSR_64 = 0x1;
-	static const unsigned char OSR_128 = 0x2;
-	static const unsigned char OSR_256 = 0x3;
+	static const byte OSR_32 = 0x0;
+	static const byte OSR_64 = 0x1;
+	static const byte OSR_128 = 0x2;
+	static const byte OSR_256 = 0x3;
 
 	MCP3903();
 	void init(); //underloaded version with default pins
 	void init(int _pinCS); //pins can be specified at function run
 	void reset();
-	void reset(unsigned char osr);
-	unsigned long readRegister(unsigned char reg);
-	void writeRegister(unsigned char reg, unsigned long data);
+	void reset(byte osr);
+	unsigned long readRegister(byte reg);
+	void writeRegister(byte reg, unsigned long data);
 	unsigned long readControlRegister();
 	unsigned long readStatusCommRegister();
-	double readADC(unsigned char channel);
-	void setGain(unsigned char channel, unsigned char gain);
-	void setGain(unsigned char channel, unsigned char gain, unsigned char boost);
+	double readADC(byte channel);
+	void setGain(byte channel, byte gain);
+	void setGain(byte channel, byte gain, byte boost);
 private:
 //Define your device pins here for SPI and the SS connection
     // default values here will be overwritten after calling the init(int _pinCS) function, left alone calling the init() function

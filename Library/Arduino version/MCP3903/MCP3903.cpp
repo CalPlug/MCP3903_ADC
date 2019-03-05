@@ -17,7 +17,7 @@ University of California, Irvine
 #include "Arduino.h"
 #include <SPI.h>
 #include "MCP3903.h"
-//#define unsigned char uint8_t //redefine uint8_t as unsigned char if type not defined, this has already been done, unsigned char is just an Arduino compatable variable type equiv. to byte
+//Note, if you are not using arduino, you may have to redefine "byte" as "unsigned char" as a type, example: unsigned char uint8_t //redefine uint8_t as unsigned char if type not defined, this has already been done, unsigned char is just an Arduino compatable variable type equiv. to byte
 
 MCP3903::MCP3903()
 {
@@ -54,7 +54,7 @@ void MCP3903::reset()  //underloaded version of the function, defaults to OSR_25
 }
 
 
-void MCP3903::reset(unsigned char osr)
+void MCP3903::reset(byte osr)
 {
 	//set to resolution specified by OSR
 	//OSR_32  11 = 256
@@ -72,9 +72,9 @@ void MCP3903::reset(unsigned char osr)
 
 //read from specified register
 //returns 24 bit data
-unsigned long MCP3903::readRegister(unsigned char reg)
+unsigned long MCP3903::readRegister(byte reg)
 {
-	unsigned char cmdByte = DEVICE_ADDR | reg <<1 | 1;
+	byte cmdByte = DEVICE_ADDR | reg <<1 | 1;
 	unsigned long r = 0;
 	SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
 	digitalWrite(pinCS, LOW); //Start communication in LOW sate for the SS pin
@@ -88,13 +88,13 @@ unsigned long MCP3903::readRegister(unsigned char reg)
 }
 
 //write 24 bit data to register
-void MCP3903::writeRegister(unsigned char reg, unsigned long data)
+void MCP3903::writeRegister(byte reg, unsigned long data)
 {
-	unsigned char cmdByte = DEVICE_ADDR | reg <<1;
+	byte cmdByte = DEVICE_ADDR | reg <<1;
 	
-	unsigned char b2 = (data & 0xff0000) >> 16;
-	unsigned char b1 = (data & 0x00ff00) >> 8;
-	unsigned char b0 = data & 0x0000ff;
+	byte b2 = (data & 0xff0000) >> 16;
+	byte b1 = (data & 0x00ff00) >> 8;
+	byte b0 = data & 0x0000ff;
 
     SPI.setBitOrder(MSBFIRST);  //Define MSB as first (explicitly)
 	digitalWrite(pinCS, LOW);  //Start communication in LOW sate for the SS pin
@@ -107,7 +107,7 @@ void MCP3903::writeRegister(unsigned char reg, unsigned long data)
 }
 
 //read from ADC channel (0-5)
-double MCP3903::readADC(unsigned char channel)
+double MCP3903::readADC(byte channel)
 {
 	unsigned long r = readRegister(channel);
 
@@ -125,17 +125,17 @@ double MCP3903::readADC(unsigned char channel)
 //GAIN_8
 //GAIN_16
 //GAIN_32
-void MCP3903::setGain(unsigned char channel, unsigned char gain) 
+void MCP3903::setGain(byte channel, byte gain) 
 {
 	setGain(channel, gain, 0);
 }
 
 //overloaded setGain
 //the boost parameter indicates the current boost setting for channel
-void MCP3903::setGain(unsigned char channel, unsigned char gain, unsigned char boost)
+void MCP3903::setGain(byte channel, byte gain, byte boost)
 {
 	unsigned long r = readRegister(REG_GAIN);
-	unsigned char idx = channel * 4;
+	byte idx = channel * 4;
 	unsigned long chGain = 0;
 
 	if (channel % 2 == 0) //0, 2, 4
