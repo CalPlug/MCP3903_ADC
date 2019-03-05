@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.00001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -163,13 +163,12 @@
 <packages>
 <package name="28-LEADSSOP">
 <smd name="21" x="0.325" y="3.275" dx="0.45" dy="1.75" layer="1"/>
-<smd name="MCP3903" x="0" y="0" dx="10.2" dy="5.3" layer="1"/>
 <smd name="20" x="0.975" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="19" x="1.625" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="18" x="2.275" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="17" x="2.925" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="15" x="4.225" y="3.275" dx="0.45" dy="1.75" layer="1"/>
-<smd name="16" x="3.575" y="3.275" dx="0.45" dy="1.75" layer="1"/>
+<smd name="16" x="3.575" y="3.00311875" dx="0.45" dy="2.286" layer="1"/>
 <smd name="28" x="-4.225" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="27" x="-3.575" y="3.275" dx="0.45" dy="1.75" layer="1"/>
 <smd name="26" x="-2.925" y="3.275" dx="0.45" dy="1.75" layer="1"/>
@@ -198,6 +197,7 @@
 <wire x1="5.1" y1="-2.65" x2="-5.1" y2="-2.65" width="0.127" layer="21"/>
 <wire x1="-5.1" y1="-2.65" x2="-5.1" y2="2.65" width="0.127" layer="21"/>
 <circle x="-5.36575" y="-3.26898125" radius="0.25841875" width="0.127" layer="21"/>
+<smd name="0" x="0.009628125" y="0.08629375" dx="9.144" dy="3.683" layer="1"/>
 </package>
 <package name="2*6HEADER">
 <wire x1="-5.715" y1="-2.54" x2="-5.08" y2="-1.905" width="0.2032" layer="21"/>
@@ -272,7 +272,7 @@
 </package>
 </packages>
 <symbols>
-<symbol name="MCP3903">
+<symbol name="28-LEADSSOP">
 <pin name="AVDD" x="-25.4" y="-7.62" length="middle" rot="R90"/>
 <pin name="CH0+" x="-22.86" y="-7.62" length="middle" rot="R90"/>
 <pin name="CH0-" x="-20.32" y="-7.62" length="middle" rot="R90"/>
@@ -343,7 +343,7 @@
 <devicesets>
 <deviceset name="MCP3903">
 <gates>
-<gate name="G$1" symbol="MCP3903" x="5.08" y="-10.16"/>
+<gate name="G$1" symbol="28-LEADSSOP" x="5.08" y="-10.16"/>
 </gates>
 <devices>
 <device name="" package="28-LEADSSOP">
@@ -2082,6 +2082,60 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="Nizanlib">
+<packages>
+<package name="0402-RES">
+<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
+<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
+<wire x1="-0.95" y1="0.45" x2="0.95" y2="0.45" width="0.0508" layer="39"/>
+<wire x1="0.95" y1="0.45" x2="0.95" y2="-0.45" width="0.0508" layer="39"/>
+<wire x1="0.95" y1="-0.45" x2="-0.95" y2="-0.45" width="0.0508" layer="39"/>
+<wire x1="-0.95" y1="-0.45" x2="-0.95" y2="0.45" width="0.0508" layer="39"/>
+<smd name="1" x="-0.55" y="0" dx="0.6" dy="0.6" layer="1"/>
+<smd name="2" x="0.55" y="0" dx="0.6" dy="0.6" layer="1"/>
+<text x="-0.889" y="0.6985" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.0795" y="-1.143" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
+<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
+<rectangle x1="-0.2032" y1="-0.3556" x2="0.2032" y2="0.3556" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="RES">
+<wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.2032" layer="94"/>
+<wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.2032" layer="94"/>
+<wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.2032" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.254" y2="-1.016" width="0.2032" layer="94"/>
+<wire x1="-0.254" y1="-1.016" x2="0.381" y2="1.016" width="0.2032" layer="94"/>
+<wire x1="0.381" y1="1.016" x2="1.016" y2="-1.016" width="0.2032" layer="94"/>
+<wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.2032" layer="94"/>
+<wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.2032" layer="94"/>
+<wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.2032" layer="94"/>
+<text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="0402-RES">
+<gates>
+<gate name="G$1" symbol="RES" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="0402-RES">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2124,6 +2178,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND11" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="J1-5" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="AD_CH5- GND option"/>
 <part name="X1" library="CalPlug" deviceset="QUARTZ_3.58M_2PIN" device="" value="4MHZ"/>
+<part name="R1" library="Nizanlib" deviceset="0402-RES" device="" value="4.7k"/>
 </parts>
 <sheets>
 <sheet>
@@ -2272,6 +2327,10 @@ Connector</text>
 <instance part="X1" gate="G$1" x="75.55738125" y="80.180178125">
 <attribute name="NAME" x="74.28738125" y="78.910178125" size="1.27" layer="95"/>
 </instance>
+<instance part="R1" gate="G$1" x="41.0972" y="121.92" rot="R90">
+<attribute name="NAME" x="39.5986" y="118.11" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="44.3992" y="118.11" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -2391,6 +2450,11 @@ Connector</text>
 <junction x="48.26" y="140.335"/>
 <wire x1="35.56" y1="140.335" x2="48.26" y2="140.335" width="0.1524" layer="91"/>
 <junction x="48.26" y="140.335"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="41.0972" y1="127" x2="41.0972" y2="137.922" width="0.1524" layer="91"/>
+<wire x1="41.0972" y1="137.922" x2="48.26" y2="137.922" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="137.922" x2="48.26" y2="137.795" width="0.1524" layer="91"/>
+<junction x="48.26" y="137.795"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="12"/>
@@ -2601,6 +2665,10 @@ Connector</text>
 <pinref part="U$1" gate="G$1" pin="RESET"/>
 <wire x1="27.94" y1="104.14" x2="48.895" y2="104.14" width="0.1524" layer="91"/>
 <label x="48.895" y="104.14" size="1.27" layer="95" xref="yes"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="41.0972" y1="116.84" x2="41.0972" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="41.0972" y1="104.14" x2="27.94" y2="104.14" width="0.1524" layer="91"/>
+<junction x="27.94" y="104.14"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="4"/>
