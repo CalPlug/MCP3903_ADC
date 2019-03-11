@@ -8,6 +8,10 @@ Modified for use for the Microsemi Future Creative Board by Yutian Ren and Micha
 University of California, Irvine
 2018
 
+//Please note from (@thegoodhen):
+When using an Arduino with 5V I/O's, you NEED to add resistors divs for the MISO, MOSI, SCK lines to match voltage input levels, otherwise it doesn't work and you risk damaging your chip.
+Tested on the ESP8266 with 5K pulldown resistors only for MISO, MOSI, SCK.
+
 Further modified back to Arduino usage again from the Microsemi version
 Michael Klopfer, Ph.D.
 University of California, Irvine
@@ -109,7 +113,8 @@ void MCP3903::writeRegister(byte reg, unsigned long data)
 //read from ADC channel (0-5)
 double MCP3903::readADC(byte channel)
 {
-	unsigned long r = readRegister(channel);
+	
+	long r = (long) readRegister(channel); //update for negative value bug by @thegoodhen
 
 	if (r > 8388607l) r -= 16777216l;
 	
