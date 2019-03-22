@@ -5,7 +5,7 @@ Extended from the Arduino Library for MCP3903 A/D Converter
  * MCP3903 Library
  * Kerry D. Wong
  * http://www.kerrywong.com, http://www.kerrywong.com/2014/05/10/mcp3903-library/, https://github.com/kerrydwong/MCP3903) * 5/2014
-Modified for use for the Microsemi Future Creative Board by Yutian Ren and Michael Klopfer, Ph.D.
+Minor Arduino Feature extensions by Zhi Luo, Kaixin Chen, Yaxin "Erica" Deng, Yutian Ren, and Michael Klopfer, Ph.D.
 University of California, Irvine
 2018
 */
