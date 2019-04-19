@@ -42,7 +42,7 @@ void setup()
 	Serial.begin(9600); //set serial comm at 9600 bps
 	SPI.begin(); //Start SPI
 	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));  //Start SPI transaction with defined parameters 
-        mymcp3903.init(15); // Setings for your Arduino's/ESP8266's SPI pin used for interfacing(pinCS) - make sure this is the pin you have your CS on!
+        mymcp3903.init(15); // (10 for UNO; 15 for ESP8266)Setings for your Arduino's/ESP8266's SPI pin used for interfacing(pinCS) - make sure this is the pin you have your CS on!
         mymcp3903.reset(MCP3903::OSR_256); 
         mymcp3903.setGain(1,MCP3903::GAIN_8);
 	//Need to initialize all channels to use
