@@ -15,8 +15,8 @@ University of California, Irvine
 
 
 //Set the gains and offsets for your ADC channels:
-#define ch0_gain 2.383490972
-#define ch0_offset -0.007884781
+#define ch0_gain 2.383490972 //these are values for calibration. By setting these values, reads will be the same as the inputs. 
+#define ch0_offset -0.007884781 //the maximum read for each channel will be around 0.7866. The deviation for these values is around 2%
 
 #define ch1_gain 2.383490972
 #define ch1_offset -0.007884781
